@@ -9,7 +9,6 @@ public class ArrayTest {
     public static void work1(String s) {
         int count = 0;
         int countNum = 0;
-
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == 'a') {
                 count++;
@@ -22,17 +21,17 @@ public class ArrayTest {
         System.out.println("字符串s中数字出现的次数有" + countNum + "次");
     }
     public static void work2(String s) {
-        int flag;
+        boolean flag;
         char[] result = new char[20];
         for (int i = 0, k = 0; i < s.length(); i++) {
-            flag = 0;
+            flag = false;
             for (int j = i + 1; j < s.length(); j++) {
                 if (s.charAt(j) == s.charAt(i)) {
-                    flag = 1;
+                    flag = true;
                     break;
                 }
             }
-            if (flag == 0) {
+            if (!flag) {
                 result[k] = s.charAt(i);
                 k++;
             }
