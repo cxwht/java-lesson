@@ -2,9 +2,10 @@ import java.util.Scanner;
 
 public class calc {
     static Scanner sc = new Scanner(System.in);
+    static boolean flag = true;
     public static void main(String[] args) {
         init();
-        while(true) {
+        while(flag) {
             get(cal());
         }
     }
@@ -15,7 +16,6 @@ public class calc {
         System.out.println("3：乘法运算");
         System.out.println("4：除法运算");
         System.out.println("5： 退出\n");
-
     }
     public static int cal() {
         int op;
@@ -32,6 +32,7 @@ public class calc {
                 System.out.println("输入第二个加法数");
                 y = sc.nextDouble();
                 res = x + y;
+                init();
                 break;
             case 2:
                 System.out.println("请输入第一个减法数");
@@ -39,6 +40,7 @@ public class calc {
                 System.out.println("输入第二个减法数");
                 y = sc.nextDouble();
                 res = x - y;
+                init();
                 break;
             case 3:
                 System.out.println("请输入第一个乘法数");
@@ -46,6 +48,7 @@ public class calc {
                 System.out.println("输入第二个乘法数");
                 y = sc.nextDouble();
                 res = x * y;
+                init();
                 break;
             case 4:
                 System.out.println("请输入第一个除法数");
@@ -64,6 +67,7 @@ public class calc {
                     System.out.println("除数不能为0！请重新开始");
                 }
                 res = x / y;
+                init();
                 break;
             default:
                 break;
@@ -86,11 +90,12 @@ public class calc {
                 break;
             case 5:
                 System.out.println("再见");
+                flag = !flag;
                 break;
             default:
                 System.out.println("请输入正确的字符!!");
         }
-        init();
+
 
     }
 }
