@@ -22,8 +22,10 @@ public class ArrayTest {
     }
     public static void work2(String s) {
         boolean flag;
+        int i = 0;
+        int k = 0;
         char[] result = new char[20];
-        for (int i = 0, k = 0; i < s.length(); i++) {
+        for (i = 0, k = 0; i < s.length(); i++) { // 遍历数组
             flag = false;
             for (int j = i + 1; j < s.length(); j++) {
                 if (s.charAt(j) == s.charAt(i)) {
@@ -36,6 +38,16 @@ public class ArrayTest {
                 k++;
             }
         }
+//        for (i = 0,k=0; i<s.length(); i++) {
+//            if(s.indexOf(i) == s.indexOf(i+1)) {
+//                flag = false;
+//                break;
+//            }
+//            if (!flag) {
+//                result[k] = s.charAt(i);
+//                k++;
+//            }
+//        }
         System.out.println("去掉重复字符的结果为:" + new String(result));
     }
 }
